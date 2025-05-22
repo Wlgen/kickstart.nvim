@@ -6,12 +6,23 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    opts = {},
+    opts = {
+      theme = 'catppucin',
+    },
   },
   {
     'akinsho/bufferline.nvim',
+    after = 'catppuccin',
     version = '*',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    opts = {},
+    opts = {
+      highlights = require('catppuccin.groups.integrations.bufferline').get(),
+    },
+  },
+  {
+    'LunarVim/bigfile.nvim',
+  },
+  {
+    'rcarriga/nvim-notify',
   },
 }

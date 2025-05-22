@@ -11,7 +11,20 @@ return {
   },
   lazy = false,
   keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
+    {
+      '<leader>e',
+      function()
+        require('neo-tree.command').execute { toggle = true }
+      end,
+      desc = 'Explorer NeoTree (Root Dir)',
+    },
+    {
+      '<leader>E',
+      function()
+        require('neo-tree.command').execute { toggle = true, dir = vim.uv.cwd() }
+      end,
+      desc = 'Explorer NeoTree (cwd)',
+    },
   },
   opts = {
     filesystem = {
